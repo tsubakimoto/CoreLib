@@ -6,8 +6,8 @@
     <ProjectGuid>{6938FDE7-4ABC-43EA-8951-B64AB797DF44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CoreLib.Test</RootNamespace>
-    <AssemblyName>CoreLib.Test</AssemblyName>
+    <RootNamespace>Tsubaki.CoreLib.Test</RootNamespace>
+    <AssemblyName>Tsubaki.CoreLib.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
