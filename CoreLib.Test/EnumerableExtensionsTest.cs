@@ -31,5 +31,24 @@ namespace Tsubaki.CoreLib.Test
                 Assert.AreEqual(expected[i], actual[i]);
             }
         }
+
+        [TestMethod]
+        public void TopTest()
+        {
+            var count = 3;
+            var data = Enumerable.Range(1, 10).Select(i => new Person { Name = "Tsubaki" + i, Age = i });
+            var expected = new List<string> { "Tsubaki10", "Tsubaki9", "Tsubaki8" };
+            var actual = data.Top(item => item.Age, count).ToList();
+            for (var i = 0; i < count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i].Name);
+            }
+        }
+    }
+
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }

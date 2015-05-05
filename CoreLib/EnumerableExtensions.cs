@@ -19,5 +19,10 @@ namespace Tsubaki.CoreLib
             result.AddRange(source2);
             return result;
         }
+
+        public static IEnumerable<TSource> Top<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, int count)
+        {
+            return source.OrderByDescending(keySelector).Take(count);
+        }
     }
 }
