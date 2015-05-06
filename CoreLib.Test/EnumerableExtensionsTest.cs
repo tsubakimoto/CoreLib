@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Tsubaki.CoreLib;
+using Tsubaki.CoreLib.Extensions;
 
 namespace Tsubaki.CoreLib.Test
 {
