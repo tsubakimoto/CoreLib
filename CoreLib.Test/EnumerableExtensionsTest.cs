@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Tsubaki.CoreLib.Extensions;
 
-namespace Tsubaki.CoreLib.Test
+namespace Hoge.CoreLib.Test
 {
     [TestClass]
     public class EnumerableExtensionsTest
@@ -36,9 +36,22 @@ namespace Tsubaki.CoreLib.Test
         public void TopTest()
         {
             var count = 3;
-            var data = Enumerable.Range(1, 10).Select(i => new Person { Name = "Tsubaki" + i, Age = i });
-            var expected = new List<string> { "Tsubaki10", "Tsubaki9", "Tsubaki8" };
-            var actual = data.Top(item => item.Age, count).ToList();
+            var data = Enumerable.Range(1, 10).Select(i => new Person { Name = "Hoge" + i, Age = i });
+            var expected = new List<string> { "Hoge10", "Hoge9", "Hoge8" };
+            var actual = data.Top(count, item => item.Age).ToList();
+            for (var i = 0; i < count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i].Name);
+            }
+        }
+
+        [TestMethod]
+        public void TopTest2()
+        {
+            var count = 3;
+            var data = Enumerable.Range(1, 4).Select(i => new Person { Name = "Hoge" + i, Age = i, Score = i % 2 });
+            var expected = new List<string> { "Hoge3", "Hoge1", "Hoge4" };
+            var actual = data.Top(count, item => item.Score, item => item.Age).ToList();
             for (var i = 0; i < count; i++)
             {
                 Assert.AreEqual(expected[i], actual[i].Name);
@@ -50,5 +63,6 @@ namespace Tsubaki.CoreLib.Test
     {
         public string Name { get; set; }
         public int Age { get; set; }
+        public double Score { get; set; }
     }
 }
